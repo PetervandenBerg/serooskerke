@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @picture.title %>
+</p>
+
+	<%= link_to 'Edit', edit_impression_picture_path(@impression, @picture) %>
+	<%= link_to 'Back', impression_pictures_path(@impression) %>

@@ -1,0 +1,29 @@
+<h1>Listing surroundings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @surroundings.each do |surrounding| %>
+      <tr>
+        <td><%= surrounding.title %></td>
+        <td><%= surrounding.description %></td>
+        <td><%= link_to 'Show', surrounding %></td>
+        <td><%= link_to 'Edit', edit_surrounding_path(surrounding) %></td>
+        <td><%= link_to 'Destroy', surrounding, method: :delete, data: { confirm: 'Are you sure?' } %></td>      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Surrounding', new_surrounding_path %>
+

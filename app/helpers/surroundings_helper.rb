@@ -1,0 +1,2 @@
+module SurroundingsHelper
+end

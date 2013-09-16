@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing impressions</h1>
+
+    <% @impressions.each do |impression| %>
+      
+        <p><%= impression.title %></p>
+        <p><%= impression.description %></p>
+        <%= link_to 'Show', impression %>
+        <%= link_to 'Edit', edit_impression_path(impression) %>
+        <%= link_to 'Destroy', impression, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+
+<br>
+
+<%= link_to 'Edit', edit_impression_path(@impression) %> 
+<%= link_to 'Back', impressions_path %>
+<%= link_to 'New Impression', new_impression_path %>
+
+<h1>Listing pictures</h1>
+
+<% @pictures.each do |picture| %>
+    <%= picture.title %>
+    <%= link_to (image_tag picture.image(:medium)), [@impression, picture] %>
+    <%= link_to 'Show', [@impression, picture] %>
+    <%= link_to 'Edit', edit_impression_picture_path(@impression, picture) %>
+    <%= link_to 'Destroy', [@impression, picture], :confirm => 'Are you sure?',
+              :method => :delete %>
+<% end %>
+
+
+
+
+

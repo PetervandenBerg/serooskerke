@@ -1,0 +1,29 @@
+<h1>Listing pictures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <tr>
+        <td><%= picture.title %></td>
+        <td><%= link_to (image_tag picture.image(:medium)), [@impression, picture] %></td>
+        <%= link_to 'Show', [@impression, picture] %>
+        <%= link_to 'Edit', edit_impression_picture_path(@impression, picture) %>
+        <%= link_to 'Destroy', [@impression, picture], :confirm => 'Are you sure?',
+                  :method => :delete %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Picture', new_impression_picture_path %>

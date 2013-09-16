@@ -1,0 +1,12 @@
+<%= simple_form_for(@surrounding) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :title, label: 'Voeg totel toe:' %>
+    <%= f.input :description, label: 'Voeg omschrijving toe', as: :text %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

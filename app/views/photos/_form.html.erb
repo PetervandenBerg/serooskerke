@@ -1,0 +1,18 @@
+<%= simple_form_for([@surrounding, @photo]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.full_error :image_file_size %>
+  <%= f.full_error :image_content_type %>
+
+  <% if @surrounding %>
+    <input type="hidden" name="photo[surrounding_id]" value="<%= @surrounding.id %>" />
+  <% end %>
+
+  <div class="inputs">
+    <%= f.input :image, label: 'Voeg afbeelding toe' %>
+    <%= f.input :title, label: 'Voeg een omschrijving van de foto toe' %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
