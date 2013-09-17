@@ -1,17 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing impressions</h1>
+<% @impressions.each do |impression| %>
 
-    <% @impressions.each do |impression| %>
-      
-        <p><%= impression.title %></p>
-        <p><%= impression.description %></p>
-        <%= link_to 'Show', impression %>
-        <%= link_to 'Edit', edit_impression_path(impression) %>
-        <%= link_to 'Destroy', impression, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+  <div id="primary" class="site-content">
+    <div id="content" role="main">
+      <article id="post-5" class="post-5 page type-page status-publish hentry">
+        <header class="entry-header">
+          <h1 class="entry-title"><%= impression.title %></h1>
+        </header>
 
-<br>
+        <div class="entry-content">
+          <p><%= impression.description %></p>
+        </div>
+      </article>
+    </div>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_impression_path(@impression) %> 
 <%= link_to 'Back', impressions_path %>

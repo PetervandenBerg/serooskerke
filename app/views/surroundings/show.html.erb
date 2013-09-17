@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<% @surroundings.each do |surrounding| %>
+
+  <div id="primary" class="site-content">
+    <div id="content" role="main">
+      <article id="post-5" class="post-5 page type-page status-publish hentry">
+        <header class="entry-header">
+          <h1 class="entry-title"><%= surrounding.title %></h1>
+        </header>
+
+        <div class="entry-content">
+          <p><%= surrounding.description %></p>
+        </div>
+      </article>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_surrounding_path(@surrounding) %> 
+<%= link_to 'Back', surroundings_path %>
+<%= link_to 'New Impression', new_surrounding_path %>
+
+<h1>Foto's</h1>
+
+<% @photos.each do |photo| %>
+    <%= photo.title %>
+    <%= link_to (image_tag photo.image(:medium)), [@surrounding, photo] %>
+    <%= link_to 'Show', [@surrounding, photo] %>
+    <%= link_to 'Edit', edit_surrounding_photo_path(@surrounding, photo) %>
+    <%= link_to 'Destroy', [@surrounding, photo], :confirm => 'Are you sure?',
+              :method => :delete %>
+<% end %>

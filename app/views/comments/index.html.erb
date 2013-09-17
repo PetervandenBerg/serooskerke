@@ -1,0 +1,20 @@
+
+<div id="primary" class="site-content">
+<div id="content" role="main">
+  <article id="post-5" class="post-5 page type-page status-publish hentry">
+    <header class="entry-header">
+      <h1 class="entry-title">Gastenboek</h1>
+    </header>
+   </article>
+</div>
+</div>
+
+<% @comments.each do |comment| %>
+<div>Naam: <%= comment.name %></div>
+<div>Bericht: <%= comment.message %></div>
+<div><%= comment.image %></div>
+<%= link_to 'Show', comment %>
+
+<% end %>
+
+<div><%= link_to 'New Comment', new_comment_path %></div>

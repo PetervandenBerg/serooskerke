@@ -313,7 +313,7 @@ html[xmlns] .slides {
 }
 
 .carouselWrapper {
-	background:#f6f6f6;
+	background:transparent;
 	padding:20px 0;
 	margin-bottom: 10px;
 }

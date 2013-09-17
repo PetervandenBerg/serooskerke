@@ -1,4 +1,4 @@
-class PicturesController < ApplicationController
+class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :get_surrounding
   # GET /photos

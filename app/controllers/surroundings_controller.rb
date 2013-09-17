@@ -11,6 +11,7 @@ class SurroundingsController < ApplicationController
   # GET /surroundings/1.json
   def show
     @surroundings = Surrounding.all
+    @surrounding = Surrounding.find(params[:id])
     @photos = @surrounding.photos
   end
 

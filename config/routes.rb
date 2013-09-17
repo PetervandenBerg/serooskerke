@@ -1,5 +1,7 @@
 Serooskerke::Application.routes.draw do
 
+  resources :comments
+
   resources :surroundings do
   	resources :photos
   end

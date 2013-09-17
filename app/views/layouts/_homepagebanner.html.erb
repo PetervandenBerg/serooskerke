@@ -1,0 +1,105 @@
+<!-- start banner -->
+<div id="main" class="wrapper"><div id="slider" class="flexslider">
+    
+<div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1200%; -webkit-transition: 0.6s; transition: 0.6s; -webkit-transform: translate3d(-2826px, 0, 0);">
+    <li class="clone" style="width: 1413px; float: left; display: block;">
+      <a href="http://chaletbouquetins.nl/omgeving/"><img src="/assets/chalet.jpg" alt="Golf"></a>
+      <div class="flex-holder">
+        <div class="flex-caption">
+          <div>
+            <h1 style="background: #43bd3d;"><a href="http://chaletbouquetins.nl/omgeving/" style="color: #fff;">OOK IN DE ZOMER!</a></h1>
+            <h1 style="background: #43bd3d;"><a href="http://chaletbouquetins.nl/omgeving/" style="color: #fff;">GOLF, WANDELEN EN FIETSEN</a></h1>
+            <span class="flex-caption-decription">Van mei tot oktober zijn er zeer veel zomeractiviteiten</span>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li style="width: 1413px; float: left; display: block;" class="">
+      <a href="http://chaletbouquetins.nl/chalet/"><img src="/assets/chalet_binnen.jpg" alt="Exclusief chalet"></a>
+      <div class="flex-holder">
+        <div class="flex-caption">
+          <div>
+            <h1 style="background: #428cbc;"><a href="http://chaletbouquetins.nl/chalet/" style="color: #fff;">CHALET BOUQUETINS IS EEN</a></h1>
+            <h1 style="background: #428cbc;"><a href="http://chaletbouquetins.nl/chalet/" style="color: #fff;">EXCLUSIEF CHALET</a></h1>
+            <span class="flex-caption-decription">4 slaapkamers, 3 badkamers en wireless internet</span>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="flex-active-slide" style="width: 1413px; float: left; display: block;">
+      <a href="http://chaletbouquetins.nl/chalet/"><img src="/assets/ski.jpg" alt="Exclusief chalet"></a>
+      <div class="flex-holder">
+        <div class="flex-caption">
+          <div>
+            <h1 style="background: #d96f4e;"><a href="http://chaletbouquetins.nl/chalet/" style="color: #fff;">PRACHTIG CHALET</a></h1>
+            <h1 style="background: #d96f4e;"><a href="http://chaletbouquetins.nl/chalet/" style="color: #fff;">VOOR DE HELE FAMILIE</a></h1>
+            <span class="flex-caption-decription">Volledig uitgeruste moderne keuken van alle gemakken voorzien</span>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="" style="width: 1413px; float: left; display: block;">
+      <a href="http://chaletbouquetins.nl/crans-montana/"><img src="assets/golf.jpg" alt="Ski"></a>
+      <div class="flex-holder">
+        <div class="flex-caption">
+          <div>
+              <h1 style="background: #428cbc;"><a href="http://chaletbouquetins.nl/crans-montana/" style="color: #fff;">CRANS-MONTANA</a></h1>
+              <h1 style="background: #428cbc;"><a href="http://chaletbouquetins.nl/crans-montana/" style="color: #fff;">FANTASTISCH SKIGEBIED</a></h1>
+              <span class="flex-caption-decription">Hoogte van 1500 meter en kijkt uit op de Matterhorn en de Weisshorn</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+  </div>
+  <ul class="flex-direction-nav">
+    <li><a class="flex-prev" href="#">Previous</a></li>
+    <li><a class="flex-next" href="#">Next</a></li>
+  </ul>
+</div> <!-- End of banner -->
+
+<!-- start slider -->
+<div class="carouselWrapper">
+  <div class="site-content">
+    <div id="carousel" class="flexslider">
+      <div class="flex-viewport" style="overflow: hidden; position: relative;">
+        <ul class="slides" style="width: 800%; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(0px, 0, 0);">
+          <li class="" style="width: 215px; float: left; display: block;"><img src="/assets/chalet_thumb.jpg" alt="Exclusief chalet"></li>
+          <li class="flex-active-slide" style="width: 215px; float: left; display: block;"><img src="/assets/chalet_binnen_thumb.jpg" alt="Chalet"></li>
+          <li class="" style="width: 215px; float: left; display: block;"><img src="/assets/ski_thumb.jpg" alt="Ski"></li>
+          <li style="width: 215px; float: left; display: block;" class=""><img src="/assets/golf_thumb.jpg" alt="Golf "></li>
+        </ul>
+      </div>
+      <ul class="flex-direction-nav">
+        <li><a class="flex-prev flex-disabled" href="#">Previous</a></li>
+        <li><a class="flex-next flex-disabled" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- end of slider -->
+
+<script type="text/javascript">
+jQuery(window).load(function() {
+    jQuery('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 215,
+        itemMargin: 20,
+        asNavFor: '#slider'
+    });
+    jQuery('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: true,
+        slideshow: true,
+        slideshowSpeed: 4500,
+        sync: "#carousel",
+        start: function(slider){
+            jQuery('body').removeClass('loading');
+        }
+    });
+});
+</script>

@@ -1,0 +1,15 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.error_notification %>
+  <%= f.full_error :image_file_size %>
+  <%= f.full_error :image_content_type %>
+
+  <div class="inputs">
+    <%= f.input :image, label: 'Voeg afbeelding toe' %>
+    <%= f.input :name, placeholder: 'Wat is uw naam ?' %>
+    <%= f.input :message, placeholder: 'Plaats hier uw bericht', as: :text %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
