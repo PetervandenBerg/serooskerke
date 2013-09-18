@@ -337,6 +337,7 @@ a:hover {
     width: 960px;
     margin: 0 auto;
     padding: 0;
+    min-height: 100%;
 }
 #primary #content {
     padding: 20px;
