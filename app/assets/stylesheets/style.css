@@ -342,11 +342,7 @@ a:hover {
     margin: 0 auto;
     padding: 0;
 }
-.container {
-  height: 70%
-}
 #primary {
-  height: 70%;
   background: rgb(250,250,250);
 }
 #primary #content {

@@ -2,37 +2,37 @@
   <div id="primary" class="site-content">
     <div id="content" role="main">
       <article id="post-5" class="post-5 page type-page status-publish hentry">
-        <header class="entry-header">
-          <h1 class="entry-title">Neem Contact met ons op.</h1>
-        </header>
+      <header class="entry-header">
+      <h1 class="entry-title">Neem Contact met ons op.</h1>
+      </header>
 
-        <div class="entry-content">
-          <p>Wilt u ons een vraag stellen met betrekking tot het vakantiehuisje, of de directe omgeving ? Vul dan onderstaand formulier in.</p>
-        </div>
+      <div class="entry-content">
+        <p>Wilt u ons een vraag stellen met betrekking tot het vakantiehuisje, of de directe omgeving ? Vul dan onderstaand formulier in.</p>
+      </div>
       </article>
-    </div>
-  </div>
 
-    <div class="row form">
+      <div class="row form">
         <%= simple_form_for @message, :url => contact_path, method: :post do |f| %>
           <%= f.error_notification %>
-            <div class="span6 contact-box">
-              <%= f.input :name, label: '', placeholder: 'Naam', input_html: {class: "name"} %>
-              <%= f.input :email, label: '', placeholder: 'Email', input_html: {class: "mail", type: "text"} %>
-              <%= f.input :subject, label: '', placeholder: 'Onderwerp', input_html: {class: "mail", type: "text"} %>
-            <div class="span6 contact-box box_r">
-              <%= f.input :body, label: '', placeholder: 'Bericht', as: :text %>
-            </div>
+          <div class="span6 contact-box">
+            <%= f.input :name, label: '', placeholder: 'Naam', input_html: {class: "name"} %>
+            <%= f.input :email, label: '', placeholder: 'Email', input_html: {class: "mail", type: "text"} %>
+            <%= f.input :subject, label: '', placeholder: 'Onderwerp', input_html: {class: "mail", type: "text"} %>
+          </div>
+          <div class="span6 contact-box box_r">
+            <%= f.input :body, label: '', placeholder: 'Bericht', as: :text %>
+          </div>
 
-            <div class="row submit">
-              <div class="span3 right">
-                <%= f.submit %>
-              </div>
+          <div style="clear: both"></div>
+          <div class="row submit">
+            <div class="span3 right">
+              <%= f.submit %>
             </div>
+          </div>
         <% end %>
       </div>
-    </div>
-  </div>    
+    </div>    
+  </div>
 </div>
 
 <div id="contact">
