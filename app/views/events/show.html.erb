@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Reservering </h1>
+
+<p>
+  <strong>Naam:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Startdatum:</strong>
+  <%= @event.start_at %>
+</p>
+
+<p>
+  <strong>Einddatum:</strong>
+  <%= @event.end_at %>
+</p>
+
+<%= link_to 'Bewerk', edit_event_path(@event) %><br>
+<%= link_to 'Verwijder', @event, :confirm => 'Weet je het zeker?', :method => :delete %>
+
+<%= link_to 'Terug', calendar_path %>

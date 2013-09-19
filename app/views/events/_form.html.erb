@@ -1,0 +1,33 @@
+<%= simple_form_for @event do |f| %>
+	<%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.hidden_field :all_day, :value => true %><br>
+  <%= f.input :start_at, as: :string %>
+  <%= f.input :end_at, as: :string %>
+
+  <%= f.button :submit, 'Plaats reservering' %>
+<% end %>
+
+<script>
+$(function() {
+  $( "#event_start_at" ).datepicker({
+    defaultDate: "+1w",
+    changeMonth: true,
+    numberOfMonths: 2,
+    dateFormat: "yy-mm-dd",
+    onClose: function( selectedDate ) {
+      $( "#event_end_date" ).datepicker( "option", "minDate", selectedDate );
+    }
+  });
+  $( "#event_end_at" ).datepicker({
+    defaultDate: "+1w",
+    changeMonth: true,
+    numberOfMonths: 2,
+    dateFormat: "yy-mm-dd",
+    onClose: function( selectedDate ) {
+      $( "#event_start_at" ).datepicker( "option", "maxDate", selectedDate );
+    }
+  });
+});
+</script>

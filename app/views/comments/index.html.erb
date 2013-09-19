@@ -5,17 +5,20 @@
 	    <header class="entry-header">
 	      <h1 class="entry-title">Gastenboek</h1>
 	    </header>
-	   </article>
-	
+	  </article>
+	 
+			<% @comments.each do |comment| %>
+			 	<div id="comment">
+					<div id="comment-naam"><%= comment.name %></div>
+					<div id="comment-bericht"><%= comment.message %></div>
+					<div id="comment-image"><%= link_to (image_tag comment.image(:medium)), comment.image(:original), rel: "prettyPhoto" %></div>
+					<%= link_to 'Show', comment %>
+	        <%= link_to 'Edit', edit_comment_path(comment) %>
+	        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+			<% end %>
+		
 
-
-	<% @comments.each do |comment| %>
-	<div>Naam: <%= comment.name %></div>
-	<div>Bericht: <%= comment.message %></div>
-	<div><%= comment.image %></div>
-	<%= link_to 'Show', comment %>
-
-	<% end %>
 
 	<h1>Nieuw Bericht</h1>
 

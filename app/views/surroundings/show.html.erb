@@ -1,37 +1,38 @@
 <p id="notice"><%= notice %></p>
 <div id="primary" class="site-content">
+  <div id="content" role="main">
+    <% @surroundings.each do |surrounding| %>
 
-  <% @surroundings.each do |surrounding| %>
-
-      <div id="content" role="main">
-        <article id="post-5" class="post-5 page type-page status-publish hentry">
-          <header class="entry-header">
-            <h1 class="entry-title"><%= surrounding.title %></h1>
-          </header>
-          <div class="entry-content">
-            <p><%= surrounding.description %></p>
-            <%= link_to 'Tekst aanpassen.', edit_surrounding_path(@surrounding) %> 
-          </div>
-        </article>
-      </div>
-  <% end %>
-
-  <header class="entry-header">
-    <h1 class="entry-title">Foto's</h1>
-    <div id="content" role="main">
       <article id="post-5" class="post-5 page type-page status-publish hentry">
-
+        <header class="entry-header">
+          <h1 class="entry-title"><%= surrounding.title %></h1>
+        </header>
         <div class="entry-content">
-          <% @photos.each do |photo| %>
-              <%= photo.title %>
-              <%= link_to (image_tag photo.image(:medium)), [@surrounding, photo] %>
-              <%= link_to 'Show', [@surrounding, photo] %>
-              <%= link_to 'Edit', edit_surrounding_photo_path(@surrounding, photo) %>
-              <%= link_to 'Destroy', [@surrounding, photo], :confirm => 'Are you sure?',
-                        :method => :delete %>
-          <% end %>
+          <p><%= surrounding.description %></p>
+          <p><%= link_to 'Bovenstaande tekst aanpassen.', edit_surrounding_path(@surrounding) %> </p>
         </div>
       </article>
-    </div>
-  </header>
+    <% end %>
+
+    <header class="entry-header">
+      <h1 class="entry-title">Foto's</h1>
+        <article id="post-5" class="post-5 page type-page status-publish hentry">
+
+          <div class="entry-content">
+            <% @photos.each do |photo| %>
+                <p><%= photo.title %></p>
+                <%= link_to (image_tag photo.image(:medium)), photo.image(:original), rel: "prettyPhoto", title: photo.title %>
+                <div>
+                  <%= link_to 'Foto aanpassen', edit_surrounding_photo_path(@surrounding, photo) %>
+                  <%= link_to 'Verwijder foto', [@surrounding, photo], :confirm => 'Are you sure?',
+                          :method => :delete %>
+                </div>
+            <% end %>
+          </div>
+        </article><br><br><br>
+        <p><%= link_to 'Nieuwe foto toevoegen', new_surrounding_photo_path(@surrounding) %></p>
+      </div>
+    </header>
+  </div>
 </div>
+

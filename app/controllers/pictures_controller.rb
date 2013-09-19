@@ -32,7 +32,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to impression_pictures_url(@impression), notice: 'Picture was successfully created.' }
+        format.html { redirect_to '/impressions/1/', notice: 'Picture was successfully created.' }
         format.json { render action: 'show', status: :created, location: @picture }
       else
         format.html { render action: 'new' }

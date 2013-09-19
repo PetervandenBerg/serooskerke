@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to surrounding_photos_url(@surrounding), notice: 'Picture was successfully created.' }
+        format.html { redirect_to '/surroundings/1/', notice: 'Picture was successfully created.' }
         format.json { render action: 'show', status: :created, location: @photo }
       else
         format.html { render action: 'new' }
@@ -75,7 +75,7 @@ class PhotosController < ApplicationController
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
-      @photo = Picture.find(params[:id])
+      @photo = Photo.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

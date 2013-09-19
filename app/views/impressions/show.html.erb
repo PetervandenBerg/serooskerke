@@ -1,36 +1,40 @@
 <p id="notice"><%= notice %></p>
+<div id="primary" class="site-content">
+  <div id="content" role="main">
 
-<% @impressions.each do |impression| %>
+    <% @impressions.each do |impression| %>
 
-  <div id="primary" class="site-content">
-    <div id="content" role="main">
       <article id="post-5" class="post-5 page type-page status-publish hentry">
         <header class="entry-header">
           <h1 class="entry-title"><%= impression.title %></h1>
         </header>
-
         <div class="entry-content">
           <p><%= impression.description %></p>
+          <p><%= link_to 'Pas bovenstaande tekst aan.', edit_impression_path(@impression) %></p>
         </div>
       </article>
-    </div>
+    <% end %>
+
+    <header class="entry-header">
+      <h1 class="entry-title">Foto's</h1>
+      <article id="post-5" class="post-5 page type-page status-publish hentry">
+        <div class="entry-content">
+          <% @pictures.each do |picture| %>
+              <p><%= picture.title %></p>
+              <%= link_to (image_tag picture.image(:medium)), picture.image(:original), rel: "prettyPhoto", title: picture.title %>
+              <div>
+                <%= link_to 'Edit', edit_impression_picture_path(@impression, picture) %>
+                <%= link_to 'Destroy', [@impression, picture], :confirm => 'Are you sure?',
+                          :method => :delete %>
+              </div>
+          <% end %>
+        </div>
+      </article><br><br><br>
+      <p><%= link_to 'Nieuwe foto toevoegen', new_impression_picture_path(@impression) %></p>
+      </div>
+    </header>
   </div>
-<% end %>
-
-<%= link_to 'Edit', edit_impression_path(@impression) %> 
-<%= link_to 'Back', impressions_path %>
-<%= link_to 'New Impression', new_impression_path %>
-
-<h1>Listing pictures</h1>
-
-<% @pictures.each do |picture| %>
-    <%= picture.title %>
-    <%= link_to (image_tag picture.image(:medium)), picture.image(:original), rel: "prettyPhoto", title: picture.title %>
-    <%= link_to 'Show', [@impression, picture] %>
-    <%= link_to 'Edit', edit_impression_picture_path(@impression, picture) %>
-    <%= link_to 'Destroy', [@impression, picture], :confirm => 'Are you sure?',
-              :method => :delete %>
-<% end %>
+</div>  
 
 
 

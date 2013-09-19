@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Naam:</strong>
   <%= @comment.name %>
 </p>
 
 <p>
-  <strong>Message:</strong>
+  <strong>Bericht:</strong>
   <%= @comment.message %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag @comment.image %>
 </p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |

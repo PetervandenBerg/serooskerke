@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag "event_calendar" %>
+<%= javascript_include_tag "event_calendar" %>
+
+<p id="notice"><%= notice %></p>
+<div id="primary" class="site-content">
+  <div id="content" role="main">
+
+  	<article id="post-5" class="post-5 page type-page status-publish hentry">
+      <header class="entry-header">
+        <h1 class="entry-title">Verhuur</h1>
+      </header>
+      <div class="entry-content">
+      	<h4>Prijzen 2013</h4>
+      	<p>De herfstvakantie (12 – 26 oktober) en de kerstvakantie ( 21 december – 4 januari 2014) , ook  € 650,- per week.
+				De overige weken verhuren wij voor € 450,-
+				In het naseizoen verhuren we ook per weekend, vrijdag 15.00 uur tot maandag 10.00 uur € 300,-, of midweek maandag 15.00 uur tot vrijdag 10.00 uur € 300,-.</p>
+
+				<h4>Prijzen 2014</h4>
+				<p>Krokusvakantie (15 februari – 22 februari en 22 februari – 1 maart) € 650,- per week.
+				Paasvakantie (17 april – 22 april) € 400,-.
+				Meivakantie (26 april – 3 mei en 3 mei – 10 mei) € 650,- per week.
+				Pinkstervakantie (6 juni – 10 juni) € 400,-
+				Maanden januari, februari, maart, april, mei verhuren we voor € 450,- per week, juni en september € 650,- per week, juli en augustus € 700,- per week.
+				Weekend of midweek is € 300,- </p>
+
+				<p>De prijs is inclusief gas en elektriciteit en bed- en linnengoed.
+				Exclusief toeristenbelasting van € 1,05 per persoon per nacht.
+				Huisdieren zijn welkom.
+				Schoonmaak zelf doen of laten doen (kosten € 40,-)</p>
+      </div>
+    </article>
+	<%= raw(event_calendar) %>
+
+	<h1> Nieuwe reservering </h1>
+
+	<%= render 'events/form' %>
+  </div>
+</div>
