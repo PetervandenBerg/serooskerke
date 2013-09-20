@@ -6,5 +6,6 @@ class Comment < ActiveRecord::Base
                         size: { less_than: 5.megabytes }
 
   validates :name, presence: true
+  validates :title, presence: true
 	validates :message, presence: true
 end

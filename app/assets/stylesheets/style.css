@@ -427,8 +427,8 @@ footer[role="contentinfo"] a:hover {
 #comment {
 	width: 917px;
 	margin-bottom: 5px;
-	border:#686868 2px solid;
-	background-image: #ffffff;
+	border:#ededed 2px solid;
+	background: #ffffff;
 	
 }
 #comment-naam {
@@ -441,7 +441,6 @@ footer[role="contentinfo"] a:hover {
 }
 
 #comment-bericht {
-	width:80%;
 	font-family:inherit;
 
 }

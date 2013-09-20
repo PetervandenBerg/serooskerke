@@ -1,4 +1,3 @@
-
 <div id="primary" class="site-content">
 	<div id="content" role="main">
 	  <article id="post-5" class="post-5 page type-page status-publish hentry">
@@ -7,19 +6,36 @@
 	    </header>
 	  </article>
 	 
+	  <div id="easybook">
 			<% @comments.each do |comment| %>
-			 	<div id="comment">
-					<div id="comment-naam"><%= comment.name %></div>
-					<div id="comment-bericht"><%= comment.message %></div>
-					<div id="comment-image"><%= link_to (image_tag comment.image(:medium)), comment.image(:original), rel: "prettyPhoto" %></div>
-					<%= link_to 'Show', comment %>
-	        <%= link_to 'Edit', edit_comment_path(comment) %>
-	        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
+	 			<p class="clr"></p>
+  			<div class="easy_frame">
+  				<div class="easy_top">
+      			<div class="easy_top_left">
+          		<strong class="easy_big" id="gbentry_74"><%= comment.name %></strong>
+          		<strong class="easy_small"><%= comment.created_at %></strong>
+          	</div>
+          	<div class="easy_top_right">
+          	</div>
+          	<div style="clear: both;"></div>
+          </div>
+          <div class="easy_title">
+            <%= comment.title %>            
+          </div>
+          <div class="easy_content">
+						<%= comment.message %>
+						<div class="easy_image">
+							<%= link_to (image_tag comment.image(:medium)), comment.image(:original), rel: "prettyPhoto" %>
+							<%= link_to 'Show', comment %>
+			        <%= link_to 'Edit', edit_comment_path(comment) %>
+			        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+						<div>
+					</div>
+	        </div>
+	      </div>
 			<% end %>
+		</div>
 		
-
-
 	<h1>Nieuw Bericht</h1>
 
 	<%= render 'form' %>
