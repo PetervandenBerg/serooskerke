@@ -10,7 +10,9 @@
         </header>
         <div class="entry-content">
           <p><%= surrounding.description %></p>
+          <% if admin_signed_in? %>
           <p><%= link_to 'Pas bovenstaande tekst aan.', edit_surrounding_path(@surrounding) %></p>
+          <% end %>
         </div>
       </article>
     <% end %>
@@ -32,17 +34,20 @@
               <div class="text">
                 <%= photo.title %>
               </div>
+              <% if admin_signed_in? %>
               <div class="author_box"> 
                 <p><%= link_to 'Edit', edit_surrounding_photo_path(@surrounding, photo) %>
                 <%= link_to 'Destroy', [@surrounding, photo], data: { confirm: 'Are you sure?' },
                                   :method => :delete %></p>
               </div>
+              <% end %>
             </div>
           <% end %>
         </div>
       <% end %>   
     </div>
   </div>
-
+<% if admin_signed_in? %>
 <p><%= link_to 'Nieuwe foto toevoegen', new_surrounding_photo_path(@surrounding) %></p>
+<% end %>
 </div>

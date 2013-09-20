@@ -1,5 +1,6 @@
 class Photo < ActiveRecord::Base
 	belongs_to :surrounding
+	belongs_to :admin
 
 	has_attached_file :image, styles: { medium: "320x240#"}
   validates_attachment :image, presence: true,

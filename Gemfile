@@ -7,6 +7,8 @@ gem 'paperclip', github: 'thoughtbot/paperclip', branch: 'rails-4'
 gem 'aws-sdk'
 gem 'devise'
 gem 'event-calendar', :require => 'event_calendar'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :production do
 	gem 'pg'

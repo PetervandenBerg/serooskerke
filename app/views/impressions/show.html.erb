@@ -10,7 +10,9 @@
         </header>
         <div class="entry-content">
           <p><%= impression.description %></p>
+          <% if admin_signed_in? %>
           <p><%= link_to 'Pas bovenstaande tekst aan.', edit_impression_path(@impression) %></p>
+          <% end %>
         </div>
       </article>
     <% end %>
@@ -32,19 +34,22 @@
               <div class="text">
                 <%= picture.title %>
               </div>
+              <% if admin_signed_in? %>
               <div class="author_box"> 
                 <p><%= link_to 'Edit', edit_impression_picture_path(@impression, picture) %>
                 <%= link_to 'Destroy', [@impression, picture], data: { confirm: 'Are you sure?' },
                                   :method => :delete %></p>
               </div>
+              <% end %>
             </div>
           <% end %>
         </div>
       <% end %>   
     </div>
   </div>
-
+<% if admin_signed_in? %>
 <p><%= link_to 'Nieuwe foto toevoegen', new_impression_picture_path(@impression) %></p>
+<% end %>
 </div>
 
 

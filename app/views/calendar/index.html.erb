@@ -31,8 +31,11 @@
     </article>
 	<%= raw(event_calendar) %>
 
-	<h1> Nieuwe reservering </h1>
+	<% if admin_signed_in? %>
 
-	<%= render 'events/form' %>
+		<h1> Nieuwe reservering </h1>
+
+		<%= render 'events/form' %>
+	<% end %>
   </div>
 </div>

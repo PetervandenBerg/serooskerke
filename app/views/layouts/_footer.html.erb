@@ -2,5 +2,14 @@
 	<div class="site-info">
 		<p>Voor boekingen kunt u contact opnemen met +31 6 38292352, of e-mailen naar <a class="text" href="mailto:hidskes@gmail.com">hidskes@gmail.com.</a>
 		</p>
+		<% if admin_signed_in? %>
+		<p>
+			<%= link_to 'Admin SignOut', destroy_admin_session_path %>
+		</p>
+		<%	else %>
+		<p>
+			<%= link_to 'Admin SignIn', new_admin_session_path %>
+		</p>
+		<% end %>
 	</div><!-- .site-info -->
 </footer>

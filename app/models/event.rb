@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :calendar
   has_event_calendar
+  belongs_to :admin
 
   # To specify the columns to use call it like this:
   # 

@@ -1,5 +1,6 @@
 class ImpressionsController < ApplicationController
   before_action :set_impression, only: [:edit, :update]
+  before_filter :authenticate_admin!, except: [:show]
 
   def index
     @impressions = Impression.all

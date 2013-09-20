@@ -55,8 +55,14 @@
 	min-height: 186px;
 }
 #blog .post_row .post .text{
-	margin: 18px auto 0;
-    width: 83%;
+	margin-top: 18px;
+	margin-left: 15px;
+	text-align:center;
+	line-height:25px; 
+	width: 83%;
+	font-weight: bold;
+	font-size: 15px;
+	font-family:inherit;
 }
 #blog .post_row .post .text h5 {
 	margin: 0 0 8px 0;

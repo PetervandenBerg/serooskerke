@@ -1,5 +1,6 @@
 class SurroundingsController < ApplicationController
   before_action :set_surrounding, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!, except: [:show]
 
   # GET /surroundings
   # GET /surroundings.json
