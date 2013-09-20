@@ -14,29 +14,38 @@
         </div>
       </article>
     <% end %>
+  </div>  
 
-    <header class="entry-header">
-      <h1 class="entry-title">Foto's</h1>
-      <article id="post-5" class="post-5 page type-page status-publish hentry">
-        <div class="entry-content">
-          <% @pictures.each do |picture| %>
-              <p><%= picture.title %></p>
-              <%= link_to (image_tag picture.image(:medium)), picture.image(:original), rel: "prettyPhoto", title: picture.title %>
-              <div>
-                <%= link_to 'Edit', edit_impression_picture_path(@impression, picture) %>
-                <%= link_to 'Destroy', [@impression, picture], :confirm => 'Are you sure?',
-                          :method => :delete %>
+
+  <div id="blog">
+    <div class="container">
+      <div class="section_header">
+        <h3>Foto's</h3>
+      </div>
+      <% @picture_groups.each do |pictures| %>
+        <div class="row post_row">
+          <% pictures.each_with_index do |picture, i| %>
+            <div class="span4 post <%= check_for_last_class(i) %>">
+              <div class="img">
+                <%= link_to (image_tag picture.image(:medium)), picture.image(:original), rel: "prettyPhoto", title: picture.title %>            
               </div>
+              <div class="text">
+                <%= picture.title %>
+              </div>
+              <div class="author_box"> 
+                <p><%= link_to 'Edit', edit_impression_picture_path(@impression, picture) %>
+                <%= link_to 'Destroy', [@impression, picture], data: { confirm: 'Are you sure?' },
+                                  :method => :delete %></p>
+              </div>
+            </div>
           <% end %>
         </div>
-      </article><br><br><br>
-      <p><%= link_to 'Nieuwe foto toevoegen', new_impression_picture_path(@impression) %></p>
-      </div>
-    </header>
+      <% end %>   
+    </div>
   </div>
-</div>  
 
-
+<p><%= link_to 'Nieuwe foto toevoegen', new_impression_picture_path(@impression) %></p>
+</div>
 
 
 

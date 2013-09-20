@@ -48,7 +48,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.update(picture_params)
-        format.html { redirect_to impression_pictures_url(@impression), notice: 'Picture was successfully updated.' }
+        format.html { redirect_to '/impressions/1/', notice: 'Picture was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -63,7 +63,7 @@ class PicturesController < ApplicationController
     @picture = @impression.pictures.find(params[:id])
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to (impression_pictures_path(@impression)) }
+      format.html { redirect_to '/impressions/1/' }
       format.json { head :no_content }
     end
   end

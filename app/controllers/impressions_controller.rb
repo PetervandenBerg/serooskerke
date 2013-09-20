@@ -9,6 +9,7 @@ class ImpressionsController < ApplicationController
     @impressions = Impression.all
     @impression = Impression.find(params[:id])
     @pictures = @impression.pictures
+    @picture_groups = @pictures.in_groups_of(3, false)
 
   end
 
