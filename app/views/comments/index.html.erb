@@ -13,7 +13,7 @@
   				<div class="easy_top">
       			<div class="easy_top_left">
           		<strong class="easy_big" id="gbentry_74"><%= comment.name %></strong>
-          		<strong class="easy_small"><%= comment.created_at %></strong>
+          		<strong class="easy_small"><%=l comment.created_at %></strong>
           	</div>
           	<div class="easy_top_right">
           	</div>
@@ -23,15 +23,17 @@
             <%= comment.title %>            
           </div>
           <div class="easy_content">
-						<%= comment.message %>
-						<div class="easy_image">
-							<%= link_to (image_tag comment.image(:medium)), comment.image(:original), rel: "prettyPhoto" %>
-							<% if admin_signed_in? %>
-								<%= link_to 'Show', comment %>
-					      <%= link_to 'Edit', edit_comment_path(comment) %>
-					      <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-					    <% end %>
-						</div>
+            <p><%= comment.message %></p>
+            <% if comment.image.present? %>
+              <div class="easy_image">
+                <%= link_to (image_tag comment.image(:medium)), comment.image(:original), rel: "prettyPhoto" %>
+              </div>
+            <% end %>
+            <% if admin_signed_in? %>
+              <%= link_to 'Show', comment %>
+              <%= link_to 'Edit', edit_comment_path(comment) %>
+              <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
 					</div>
 	      </div>
 			<% end %>
