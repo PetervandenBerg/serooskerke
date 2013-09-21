@@ -26,22 +26,21 @@
 						<%= comment.message %>
 						<div class="easy_image">
 							<%= link_to (image_tag comment.image(:medium)), comment.image(:original), rel: "prettyPhoto" %>
-						<% if admin_signed_in? %>
-							<%= link_to 'Show', comment %>
-					        <%= link_to 'Edit', edit_comment_path(comment) %>
-					        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+							<% if admin_signed_in? %>
+								<%= link_to 'Show', comment %>
+					      <%= link_to 'Edit', edit_comment_path(comment) %>
+					      <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
 					    <% end %>
-						<div>
+						</div>
 					</div>
-	        </div>
 	      </div>
 			<% end %>
 		</div>
 		<%= will_paginate @comments %>
 		
-	<h1>Nieuw Bericht</h1>
+		<h1>Nieuw Bericht</h1>
 
-	<%= render 'form' %>
+		<%= render 'form' %>
 
 	</div>
 </div>
