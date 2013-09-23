@@ -32,7 +32,7 @@
                 <%= link_to (image_tag photo.image(:medium)), photo.image(:original), rel: "prettyPhoto", title: photo.title %>            
               </div>
               <div class="text">
-                <%= photo.title %>
+                <%= truncate(photo.title, length: 20) %>
               </div>
               <% if admin_signed_in? %>
               <div class="author_box"> 

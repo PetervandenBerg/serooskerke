@@ -282,7 +282,7 @@ html {
 	font-size: 87.5%;
 }
 body {
-    background-image: url('tree_bark.png');
+    background-image: url('/assets/tree_bark.png');
 	font-size: 14px;
 	font-size: 1rem;
 	font-family: Helvetica, Arial, sans-serif;

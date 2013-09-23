@@ -4,11 +4,11 @@
 		</p>
 		<% if admin_signed_in? %>
 		<p>
-			<%= link_to 'Admin SignOut', destroy_admin_session_path %>
+			<%= link_to 'Admin Sign Out', destroy_admin_session_path, :method => :delete %>
 		</p>
 		<%	else %>
 		<p>
-			<%= link_to 'Admin SignIn', new_admin_session_path %>
+			<%= link_to 'Admin Sign In', new_admin_session_path %>
 		</p>
 		<% end %>
 	</div><!-- .site-info -->
