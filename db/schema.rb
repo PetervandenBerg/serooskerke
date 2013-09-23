@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923101208) do
+ActiveRecord::Schema.define(version: 20130923132713) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20130923101208) do
 
   create_table "comments", force: true do |t|
     t.string   "name"
-    t.string   "message"
+    t.text     "message",            limit: 1500
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
