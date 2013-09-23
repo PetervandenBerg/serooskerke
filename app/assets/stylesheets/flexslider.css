@@ -14,7 +14,7 @@
 }
 
 .slides,.flex-control-nav,.flex-direction-nav {
-	margin:0;
+	margin:0 ;
 	padding:0;
 	list-style:none;
 }
@@ -24,6 +24,10 @@
 .flexslider {
 	margin:0;
 	padding:0;
+}
+.flexsliders {
+	margin: 0 -20px 0 0;
+	padding:25px;
 }
 
 .flexslider .slides > li {
