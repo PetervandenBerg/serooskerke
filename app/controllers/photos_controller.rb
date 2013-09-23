@@ -49,7 +49,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.update(photo_params)
-        format.html { redirect_to surrounding_photos_url(@surrounding), notice: 'Picture was successfully updated.' }
+        format.html { redirect_to '/surroundings/1/', notice: 'Picture was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -64,7 +64,7 @@ class PhotosController < ApplicationController
     @photo = @surrounding.photos.find(params[:id])
     @photo.destroy
     respond_to do |format|
-      format.html { redirect_to (surrounding_photos_path(@surrounding)) }
+      format.html { redirect_to '/surroundings/1/' }
       format.json { head :no_content }
     end
   end
